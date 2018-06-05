@@ -1,0 +1,35 @@
+---
+banknotes:
+  500: 0
+  200: 0
+  100: 2
+  50: 1
+  20: 2
+  10: 4
+  5: 1
+  2: 0
+  1: 2
+accounts:
+  1:
+    name: Admin
+    password: !ruby/string:BCrypt::Password
+      str: "$2a$10$ccDs/zCmtDIKIJNQjci.IeS3NVrZkPstYZcQWSM27T4ZZgquoE4Y2"
+      version: 2a
+      cost: 10
+      salt: "$2a$10$ccDs/zCmtDIKIJNQjci.Ie"
+      checksum: S3NVrZkPstYZcQWSM27T4ZZgquoE4Y2
+    balance: '0'
+    status: unlock
+  3321:
+    name: Volodymyr
+    password: !ruby/string:BCrypt::Password
+      str: "$2a$10$9stP5ozLgaRbFLXrIjR.NeMiC2Zhr3Fckt.FgYwGYwEyc.Iuve14a"
+      version: 2a
+      cost: 10
+      salt: "$2a$10$9stP5ozLgaRbFLXrIjR.Ne"
+      checksum: MiC2Zhr3Fckt.FgYwGYwEyc.Iuve14a
+    balance: '422'
+  5922:
+    name: Iryna
+    password: "$2a$10$JLMe.WF04/Ix3JF0qvGGQOUxqmZJbk8K43/NYXoWzaOJfCnkxtR4K"
+    balance: '4311'
