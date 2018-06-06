@@ -152,19 +152,23 @@ else
         withdraw_input = 0
         withdraw_input = ask("Enter Amount You Wish to Withdraw:  ")
 
+        # too big number of FUNDS
         while withdraw_input.to_i > bal.to_i * 2
           withdraw_input = ask("ERROR: INSUFFICIENT FUNDS!! PLEASE ENTER A DIFFERENT AMOUNT: ")
         end
 
+        # bigger than customer has on account
         while withdraw_input.to_i > amount_cash do
           withdraw_input = ask("ERROR: THE MAXIMUM AMOUNT AVAILABLE IN THIS ATM IS ₴ #{amount_cash}.
                                PLEASE ENTER A DIFFERENT AMOUNT: ")
         end
 
+        # no enough funds on account
         while bal.to_i < withdraw_input.to_i and withdraw_input.to_i  < amount_cash
-          withdraw_input = ask("ERROR: YOU HAVE NO ENOUGH ASSETS ON ACCOUNT: ")
+          withdraw_input = ask("ERROR: YOU HAVE NO ENOUGH FUNDS ON ACCOUNT: ")
         end
 
+        # withdrawal machinery
         while withdraw_input.to_i <= bal.to_i and withdraw_input.to_i <= amount_cash
           x = withdraw_input.to_i
           sum = 0
