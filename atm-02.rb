@@ -53,7 +53,7 @@ if cust_name == '0001' and customers[u_name]['status'] == 'unlock'
 
   loop do
     # Show admin menu
-    puts "1. Display bills", "2. Display accounts", "3. Change bills", 
+    puts "1. Display bills", "2. Display accounts", "3. Change bills",
          "4. Change balance", "5. Reset password", "6. Log Out"
 
     input = ask("Your choice:  ")
@@ -136,7 +136,7 @@ if cust_name == '0001' and customers[u_name]['status'] == 'unlock'
 else
 
   loop do
-    # Show menu  
+    # Show menu
     puts "1. Display Balance", "2. Withdraw", "3. Log Out"
 
     input = ask("Your choice:  ")
@@ -145,7 +145,7 @@ else
 
       when "1"
         # Displaying Balance
-        puts "Your Current Balance is ₴ #{bal}"
+        puts "#{current_user}, Your Current Balance is ₴ #{bal}"
 
       when "2"
         # withdrawing money
@@ -157,12 +157,12 @@ else
         end
 
         while withdraw_input.to_i > amount_cash do
-          withdraw_input = ask("ERROR: THE MAXIMUM AMOUNT AVAILABLE IN THIS ATM IS ₴ #{amount_cash}. 
-                               PLEASE ENTER A DIFFERENT AMOUNT: ") 
+          withdraw_input = ask("ERROR: THE MAXIMUM AMOUNT AVAILABLE IN THIS ATM IS ₴ #{amount_cash}.
+                               PLEASE ENTER A DIFFERENT AMOUNT: ")
         end
 
         while bal.to_i < withdraw_input.to_i and withdraw_input.to_i  < amount_cash
-          withdraw_input = ask("ERROR: YOU HAVE NO ENOUGH ASSETS ON ACCOUNT: ")  
+          withdraw_input = ask("ERROR: YOU HAVE NO ENOUGH ASSETS ON ACCOUNT: ")
         end
 
         while withdraw_input.to_i <= bal.to_i and withdraw_input.to_i <= amount_cash
@@ -171,21 +171,20 @@ else
           new_bills_val = {}
           atm_cash.each do |key, val|
             if val != 0 and sum < x and sum != x
-              if x <= (key * val) and k = ( x - sum ) / key and k != 0 and (x - sum) > (key * k) or 
+              if x <= (key * val) and k = ( x - sum ) / key and k != 0 and (x - sum) > (key * k) or
                   x > (key * val) and (key * val) >= (x - sum) and k = ( x - sum ) / key and k != 0
                 sum = sum + (key * k)
                 bill_counter = val - k
                 new_bills_val[key] = bill_counter
               elsif (x - sum) > (key * val)
                 sum = sum + (key * val)
-                bill_counter_zero = key
                 new_bills_val[key] = 0
               end
             end
           end
           break if sum == x
-          withdraw_input = ask("ERROR: THE AMOUNT YOU REQUESTED CANNOT BE COMPOSED FROM BILLS AVAILABLE IN THIS ATM. 
-                               PLEASE ENTER A DIFFERENT: ") 
+          withdraw_input = ask("ERROR: THE AMOUNT YOU REQUESTED CANNOT BE COMPOSED FROM BILLS AVAILABLE IN THIS ATM.
+                               PLEASE ENTER A DIFFERENT: ")
         end
         # update bills and balance info
         new_bills_val.each do |key, val|
@@ -203,11 +202,11 @@ else
         puts "******************************************************"
         atm
         return
-      else
+    else
         puts "WARNING! Invalid option: #{input}"
-      end
     end
   end
+end
   rescue SystemExit, Interrupt
     puts " ATM was interrupted!"
 end
