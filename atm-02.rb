@@ -145,7 +145,7 @@ else
 
       when "1"
         # Displaying Balance
-        puts "#{current_user}, Your Current Balance is ₴ #{bal}"
+        puts "#{current_user}, your current balance is ₴ #{bal}"
 
       when "2"
         # withdrawing money
